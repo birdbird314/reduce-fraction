@@ -3,7 +3,6 @@
             [reduce-fraction.core :refer :all]))
 
 (deftest reduce-fraction-test
-  
   (testing "Should not reduce already reduced number"
     (is (= (reduce-fraction [1 1]) [1 1])))
 
