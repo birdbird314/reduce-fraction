@@ -2,6 +2,13 @@
   (:require [clojure.test :refer :all]
             [reduce-fraction.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest reduce-fraction-test
+  
+  (testing "Should not reduce already reduced number"
+    (is (= (reduce-fraction [1 1]) [1 1])))
+
+  (testing "Should reduce fraction with prime GCD"
+    (is (= (reduce-fraction [4 6]) [2 3])))
+
+  (testing "Should reduce fraction with non-prime GCD"
+    (is (= (reduce-fraction [6 12]) [1 2]))))
